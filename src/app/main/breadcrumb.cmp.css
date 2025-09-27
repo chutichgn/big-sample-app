@@ -1,0 +1,35 @@
+/* src/main/scroll-breadcrumb/scroll-breadcrumb.css */
+.breadcrumb-container {
+    position: fixed;
+    top: 64px; /* Below top navbar */
+    width: 100%;
+    z-index: 1000;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.breadcrumb-container.hidden {
+    transform: translateY(-100%);
+}
+
+.breadcrumb-item {
+    font-size: 1.1rem;
+}
+
+.breadcrumb-item a {
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #0d6efd;
+}
+
+.breadcrumb-item a:hover {
+    color: #0a58ca;
+}
+
+@media (max-width: 576px) {
+    .breadcrumb-item {
+        font-size: 1rem;
+    }
+}

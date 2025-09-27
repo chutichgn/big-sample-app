@@ -8,7 +8,7 @@ import {authHookRunBlock} from "./requiresAuth.hook";
 import {loadingIndicatorHookRunBlock} from "./loadingIndicator.hook";
 
 export const GLOBAL_MODULE = angular.module('global', []);
-
+GLOBAL_MODULE.constant('dialog', dialog);
 GLOBAL_MODULE.directive('dialog', dialog);
 
 GLOBAL_MODULE.service('AppConfig', AppConfig);
@@ -21,3 +21,8 @@ GLOBAL_MODULE.service('LoadingIndicatorService', LoadingIndicatorService);
 
 GLOBAL_MODULE.run(authHookRunBlock);
 GLOBAL_MODULE.run(loadingIndicatorHookRunBlock);
+GLOBAL_MODULE.filter('trustHtml', ['$sce', function ($sce) {
+    return function (text) {
+        return $sce.trustAsHtml(text);
+    };
+}])

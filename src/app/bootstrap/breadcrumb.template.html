@@ -1,0 +1,14 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li  class="breadcrumb-item"><a ng-href="/"><i class="bi bi-house-heart"></i> Root</a> </li>
+
+        <li ng-repeat="step in steps | limitTo:(steps.length-1)" class="breadcrumb-item">
+            <a href="{{step.ncyBreadcrumbLink}}" ng-bind-html="step.ncyBreadcrumbLabel | trustHtml"></a>
+        </li>
+        <li ng-repeat="step in steps | limitTo:-1" class="active breadcrumb-item">
+            <span ng-bind-html="step.ncyBreadcrumbLabel | trustHtml "></span>
+        </li>
+    </ol>
+</nav>
+
+

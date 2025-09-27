@@ -48,7 +48,7 @@ export const login = {
 
   template:  `
     <div class="container">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="col-6 col-offset-3 col-8 col-offset-2">
         <h3>Log In</h3>
         <p>(This login screen is for demonstration only... just pick a username, enter 'password' and click <b>"Log in"</b>)</p>
         <hr>

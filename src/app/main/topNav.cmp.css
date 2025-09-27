@@ -1,0 +1,49 @@
+/* src/main/top-nav/top-nav.css */
+.navbar-top {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1rem;
+}
+
+.navbar-top .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-top .navbar-brand.truncate {
+    font-size: 1.5rem;
+    max-width: 60%; /* Tighter constraint for truncation */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: inline-block; /* Ensure proper truncation */
+}
+
+.navbar-top .nav-link {
+    font-size: 2rem;
+    color: #6c757d;
+    padding: 0.75rem;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+}
+
+.modal-body p {
+    font-size: 1.1rem;
+    word-break: break-word; /* Handle long words in modal */
+}
+
+@media (max-width: 576px) {
+    .navbar-top .navbar-brand.truncate {
+        font-size: 1.25rem;
+        max-width: 50%; /* Adjust for smaller screens */
+    }
+    .navbar-top .nav-link {
+        font-size: 1.75rem;
+    }
+}

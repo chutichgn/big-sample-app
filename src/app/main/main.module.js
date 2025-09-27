@@ -2,7 +2,21 @@ import {app} from "./app.component";
 import {welcome} from "./welcome.component";
 import {login} from "./login.component";
 import {home} from "./home.component";
-import {appState, homeState, loginState, welcomeState, contactsFutureState, prefsFutureState, mymessagesFutureState} from "./app.states";
+import {footerNav} from "./footerNav.cmp";
+import {topNav} from "./topNav.cmp";
+import {breadcrumb} from "./breadcrumb.cmp";
+import {genericLayoutCmp} from "./genericLayout";
+import {
+    stGenericLayout,
+    appState,
+    homeState,
+    loginState,
+    welcomeState,
+    contactsFutureState,
+    prefsFutureState,
+    mymessagesFutureState,
+} from "./app.states";
+
 
 export const MAIN_MODULE = angular.module('main', []);
 
@@ -18,6 +32,7 @@ MAIN_MODULE.config(['$uiRouterProvider', function($uiRouter) {
 
   const $stateRegistry = $uiRouter.stateRegistry;
   $stateRegistry.register(appState);
+  $stateRegistry.register(stGenericLayout);
   $stateRegistry.register(homeState);
   $stateRegistry.register(loginState);
   $stateRegistry.register(welcomeState);
@@ -28,6 +43,10 @@ MAIN_MODULE.config(['$uiRouterProvider', function($uiRouter) {
 }]);
 
 MAIN_MODULE.component('app', app);
+MAIN_MODULE.component('genericLayout', genericLayoutCmp);
 MAIN_MODULE.component('welcome', welcome);
 MAIN_MODULE.component('login', login);
 MAIN_MODULE.component('home', home);
+MAIN_MODULE.component('footerNav', footerNav);
+MAIN_MODULE.component('topNav', topNav);
+MAIN_MODULE.component('breadcrumb', breadcrumb);

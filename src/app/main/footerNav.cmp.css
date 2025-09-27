@@ -1,0 +1,71 @@
+/* src/main/footer-nav/footer-nav.css */
+.navbar-bottom {
+    background-color: #fff;
+    border-top: 1px solid #dee2e6;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 0; /* Increased padding */
+}
+
+.navbar-bottom .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem; /* Larger font */
+    padding: 0.75rem; /* Larger touch target */
+}
+
+.navbar-bottom .nav-link.active {
+    color: #0d6efd;
+}
+
+.navbar-bottom .nav-link i {
+    font-size: 2rem; /* Larger icon */
+    margin-bottom: 0.25rem;
+}
+
+.burger-icon {
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
+}
+
+.burger-icon i {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.offcanvas-bottom {
+    height: 60vh; /* Slightly taller for better readability */
+}
+
+.offcanvas-header .offcanvas-title {
+    font-size: 1.25rem; /* Larger title */
+}
+
+.offcanvas-body .nav-link {
+    font-size: 1.1rem; /* Larger font */
+    padding: 0.75rem;
+}
+
+/*@media (max-width: 576px) {*/
+/*    .navbar-bottom .nav-link {*/
+/*        font-size: 0.9rem;*/
+/*    }*/
+/*    .navbar-bottom .nav-link i {*/
+/*        font-size: 1.75rem;*/
+/*    }*/
+/*    .burger-icon {*/
+/*        font-size: 0.9rem;*/
+/*    }*/
+/*    .burger-icon i {*/
+/*        font-size: 1.75rem;*/
+/*    }*/
+/*    .offcanvas-body .nav-link {*/
+/*        font-size: 1rem;*/
+/*    }*/
+/*}*/

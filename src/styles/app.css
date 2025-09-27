@@ -1,27 +1,48 @@
+body {
+    padding-top: 106px;
+    padding-bottom: 70px;
+}
+
+.main-content {
+    min-height: calc(100vh - 176px);
+    padding-top: 66px;
+}
+
+
+/* Add to a shared CSS file, e.g., src/styles/shared.css (import in app.js if needed) */
+.breadcrumb-container {
+    position: fixed;
+    top: 100px; /* Below top navbar */
+    width: 100%;
+    z-index: 1000;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.breadcrumb-container.hidden {
+    transform: translateY(-100%);
+}
+
+.breadcrumb-item {
+    font-size: 1.1rem; /* Larger font */
+}
+
+.breadcrumb-item a {
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #0d6efd;
+}
+
+.breadcrumb-item a:hover {
+    color: #0a58ca;
+}
+
+
+
 button.btn i + span {
     margin-left: 0.75em;
-}
-
-.flex-h {
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.flex-v {
-    display: flex;
-    flex-flow: column wrap;
-}
-
-.flex-h > * {
-    flex: 1 1;
-}
-
-.flex.grow {
-    flex: 1 0 auto;
-}
-
-.flex.nogrow {
-    flex: 0 1 auto;
 }
 
 
@@ -47,34 +68,6 @@ button.btn i + span {
     text-shadow: 0.1em 0.1em 0.1em black;
 }
 
-.navheader {
-    margin: 0.3em 0.3em 0 0.3em;
-}
-
-.navheader .nav-tabs li.active a:focus {
-    background-color: #f7f7f7;
-}
-
-.navheader .nav-tabs li.active a {
-    border-color: lightgray lightgray rgba(0,0,0,0) lightgray ;
-    background-color: #f7f7f7;
-}
-
-.navheader .nav-tabs li a {
-    border-width: 1px;
-    border-radius: 10px 10px 0 0;
-}
-
-.navheader .logged-in-user div.hoverdrop {
-    display: none;
-    position: absolute;
-    width: 100%;
-}
-
-.navheader .logged-in-user:hover div.hoverdrop {
-    display: flex;
-    flex-direction:row-reverse;
-}
 
 /* my messages */
 
@@ -91,14 +84,13 @@ button.btn i + span {
 }
 
 
-
-
 /* selection lists */
 .selectlist {
     margin: 0;
     padding: 1.5em 0;
     background-color: #DDD;
 }
+
 .selectlist a {
     display: block;
     color: black;
@@ -106,33 +98,33 @@ button.btn i + span {
     text-decoration: none;
     font-size: small;
 }
+
 .selectlist .selected {
     background-color: cornflowerblue;
 }
+
 .selectlist .selected a {
     color: white;
 }
+
 .selectlist i.fa {
     width: 1.35em;
 }
-
 
 
 /* folder list */
 .selectlist .folder.selected i.fa:before {
     content: "\f115";
 }
+
 .selectlist .folder:not(.selected) i.fa:before {
     content: "\f114";
 }
 
 
-
 .ellipsis {
     text-overflow: ellipsis;
 }
-
-
 
 
 /* message list */
@@ -149,7 +141,7 @@ button.btn i + span {
 
 .messagelist table {
     table-layout: fixed;
-    width:100%;
+    width: 100%;
 }
 
 .messagelist thead td {
@@ -185,25 +177,34 @@ button.btn i + span {
     color: white;
 }
 
-.messagelist table td:nth-child(1){ width: 1.75em; }
-.messagelist table td:nth-child(2){ width: 21%; }
-.messagelist table td:nth-child(3){ width: 62%; }
-.messagelist table td:nth-child(4){ width: 15%; }
+.messagelist table td:nth-child(1) {
+    width: 1.75em;
+}
+
+.messagelist table td:nth-child(2) {
+    width: 21%;
+}
+
+.messagelist table td:nth-child(3) {
+    width: 62%;
+}
+
+.messagelist table td:nth-child(4) {
+    width: 15%;
+}
 
 .messagelist thead tr:first-child {
     /*position:absolute;*/
 }
 
-.messagelist tbody tr:first-child td{
+.messagelist tbody tr:first-child td {
     /*padding-top:28px;*/
 }
 
 
-
-
 /* message content */
 
-.message .header,.body {
+.message .header, .body {
     padding: 1em 2em;
 }
 
@@ -232,6 +233,7 @@ button.btn i + span {
     background-color: lightgray;
     height: 100%;
 }
+
 .compose .body textarea {
     width: 100%;
     border: 0;
@@ -242,9 +244,6 @@ button.btn i + span {
     padding: 1em 0;
     float: right;
 }
-
-
-
 
 
 .contact {
@@ -270,63 +269,10 @@ button.btn i + span {
 }
 
 
-
-
-
-.dialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1040;
-}
-
-.dialog .backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: opacity 0.25s ease;
-    background: #000;
-    opacity: 0;
-}
-
-.dialog.active .backdrop {
-    opacity: 0.5;
-}
-
-.dialog .wrapper {
-    z-index: 1041;
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dialog .content {
-    transition: top 0.25s ease;
-    flex: 1 1 auto;
-    background: white;
-    padding: 2em;
-    position: relative;
-    top: -200px;
-}
-
-.dialog.active .content {
-    top: 4em;
-}
-
-
 .bounce-horizontal {
     animation: bounce-horizontal 0.5s alternate infinite;
 }
 
-@keyframes bounce-horizontal {
-    0% { left: 1.5em; }
-    100% { left: 0.5em; }
-}
 
 #spinner {
     position: fixed;
@@ -340,6 +286,7 @@ button.btn i + span {
     align-content: center;
     justify-content: center;
 }
+
 #spinner i {
     flex: 0 0 auto;
     margin-left: auto;

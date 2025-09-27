@@ -3,7 +3,7 @@
   "description": "Sample app for UI-Router for AngularJS",
   "version": "1.0.2",
   "scripts": {
-    "clean": "shx rm -rf _bundles transpiled",
+    "clean": "shx rm -rf dist transpiled",
     "start": "webpack-dev-server --progress --open",
     "build": "webpack",
     "test": "npm run build && cypress-runner run --path .",
@@ -29,10 +29,13 @@
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.29",
+    "@uirouter/core": "^6.1.1",
     "@uirouter/dsr": "^1.2.0",
     "@uirouter/sticky-states": "^1.5.1",
     "@uirouter/visualizer": "^7.2.1",
+    "ajv": "^8.17.1",
     "angular": "^1.8.2",
+    "angular-breadcrumb": "^0.5.0",
     "oclazyload": "^1.1.0"
   },
   "devDependencies": {
@@ -40,10 +43,16 @@
     "@babel/preset-env": "^7.14.9",
     "@uirouter/cypress-runner": "^3.0.0",
     "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
     "shx": "^0.3.4",
     "source-map-loader": "^4.0.1",
+    "style-loader": "^4.0.0",
     "webpack": "^5.77.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.2"
+    "webpack-dev-server": "^4.15.2"
   }
 }
