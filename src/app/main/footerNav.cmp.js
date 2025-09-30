@@ -7,18 +7,27 @@ import template from './footerNav.cmp.html';
  * Then it sends the user back to the `returnTo` state, which is provided as a resolve data.
  */
 class FooterNavController {
-    constructor($scope, $state) {
+    constructor($scope, NavService) {
         this.isOffcanvasOpen = false;
         this.$scope = $scope;
+        this.NavService = NavService;
+        this.navItems = [];
+
     }
 
     toggleOffcanvas() {
         this.isOffcanvasOpen = !this.isOffcanvasOpen;
-        this.$scope.$apply();
+        // this.$scope.$apply();
+    }
+
+    $onInit() {
+        this.NavService.getNavItems().then(items => {
+            this.navItems = items;
+        });
     }
 }
 
-FooterNavController.$inject = ['$scope','$state'];
+FooterNavController.$inject = ['$scope','NavService'];
 /**
 
  */

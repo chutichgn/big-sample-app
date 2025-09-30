@@ -1,19 +1,25 @@
-<!-- src/components/top-nav/top-nav.html -->
+<!-- src/main/top-nav/top-nav.html -->
 <nav class="navbar fixed-top navbar-light bg-white navbar-top">
-
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
         </a>
-        <span class="navbar-brand  truncate" ng-click="$ctrl.toggleModal()" ng-bind="$ctrl.title"></span>
-        <a class="nav-link ms-auto" ui-sref="app.profile" ui-sref-active="active">
-            <i class="bi bi-person-circle"></i>
-        </a>
+        <span class="navbar-brand truncate" ng-click="$ctrl.toggleModal()">{{ $ctrl.title || ' ' }}</span>
+        <div class="ms-auto d-flex align-items-center">
+            <user-menu ng-if="$ctrl.AuthService.isAuthenticated()"></user-menu>
+            <div ng-if="!$ctrl.AuthService.isAuthenticated()" class="d-flex gap-2">
+                <login-modal>
+                    <button class="btn btn-outline-primary" ng-click="$ctrl.openSignInModal()">Sign In</button>
+                </login-modal>
+                <a class="btn btn-primary" ui-sref="app.signup">Sign Up</a>
+            </div>
+        </div>
     </div>
 </nav>
 
-<!-- Modal for full text -->
-<div class="modal fade" tabindex="-1" ng-class="{ 'show d-block': $ctrl.isModalOpen }" aria-hidden="{{ !$ctrl.isModalOpen }}">
+<!-- Title Modal -->
+<div class="modal fade" tabindex="-1" ng-class="{ 'show d-block': $ctrl.isModalOpen }"
+     aria-hidden="{{ !$ctrl.isModalOpen }}">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -26,3 +32,4 @@
         </div>
     </div>
 </div>
+

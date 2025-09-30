@@ -1,0 +1,14 @@
+/* src/main/sign-in-modal/sign-in-modal.css */
+.modal-title {
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 576px) {
+    .modal-body {
+        font-size: 1rem;
+    }
+}

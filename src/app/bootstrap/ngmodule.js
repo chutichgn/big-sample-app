@@ -5,10 +5,12 @@
 // External dependencies
 import * as angular from "angular";
 import uiRouter from "@uirouter/angularjs";
+import jwt from "angular-jwt";
 import {StickyStatesPlugin} from '@uirouter/sticky-states';
 import {DSRPlugin} from '@uirouter/dsr';
 import ocLazyLoad from "oclazyload";
 import angularBreadcrumb from 'angular-breadcrumb';
+import ngBootstrap5 from "../util/angular-bootstrap-5";  //  import from downloaded file since no npm available
 import breadcrumbTpl from "./breadcrumb.template.html";
 
 import {MAIN_MODULE} from '../main/main.module';
@@ -21,6 +23,8 @@ import {GLOBAL_MODULE} from '../global/global.module';
 export const ngmodule = angular.module("demo", [
     uiRouter,
     'ncy-angular-breadcrumb',
+    'angular-jwt',
+    'ngBootstrap5', //  import from downloaded file since no npm available
     ocLazyLoad,
     MAIN_MODULE.name,
     GLOBAL_MODULE.name,

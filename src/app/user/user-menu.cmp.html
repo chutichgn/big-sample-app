@@ -1,0 +1,17 @@
+<!-- src/main/user-menu/user-menu.html -->
+<a class="nav-link" bs5-popover trigger="click" placement="left" html="true" template-url="userMenuTemplate.tps">
+    <i class="bi bi-person-circle"></i>
+</a>
+
+<script type="text/ng-template" id="userMenuTemplate.tps">
+    <div>
+        <h3 class=" ">User Menu</h3>
+        <div class=" ">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action" ui-sref="app.profile">User Profile</a>
+                <a class="list-group-item list-group-item-action" ui-sref="app.add_credit">Add Credit</a>
+                <a class="list-group-item list-group-item-action" ng-click="$ctrl.logout()">Sign Out</a>
+            </div>
+        </div>
+    </div>
+</script>

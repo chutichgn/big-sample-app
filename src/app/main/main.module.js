@@ -1,8 +1,9 @@
 import {app} from "./app.component";
 import {welcome} from "./welcome.component";
-import {login} from "./login.component";
+import {login} from "./login.cmp";
 import {home} from "./home.component";
 import {footerNav} from "./footerNav.cmp";
+import {bottomNav} from "./bottomNav.cmp";
 import {topNav} from "./topNav.cmp";
 import {breadcrumb} from "./breadcrumb.cmp";
 import {genericLayoutCmp} from "./genericLayout";
@@ -16,6 +17,9 @@ import {
     prefsFutureState,
     mymessagesFutureState,
 } from "./app.states";
+import {userMenu} from "../user/user-menu.cmp";
+import {loginModal} from "./login.modal";
+import {loginForm} from "./login.form";
 
 
 export const MAIN_MODULE = angular.module('main', []);
@@ -48,5 +52,9 @@ MAIN_MODULE.component('welcome', welcome);
 MAIN_MODULE.component('login', login);
 MAIN_MODULE.component('home', home);
 MAIN_MODULE.component('footerNav', footerNav);
+MAIN_MODULE.component('loginModal', loginModal);
+MAIN_MODULE.component('loginForm', loginForm);
+// MAIN_MODULE.component('bottomNav', bottomNav);
 MAIN_MODULE.component('topNav', topNav);
 MAIN_MODULE.component('breadcrumb', breadcrumb);
+MAIN_MODULE.component('userMenu', userMenu);

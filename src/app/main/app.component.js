@@ -10,6 +10,13 @@ class AuthedController {
         this.isAuthenticated = AuthService.isAuthenticated();
     }
 
+    logout() {
+        let {AuthService, $state} = this;
+        AuthService.logout();
+        // Reload states after authentication change
+        return $state.go('welcome', {}, {reload: true});
+    }
+
     isActive(glob) {
         return this.$state.includes(glob);
     }

@@ -14,13 +14,13 @@
 
 .navbar-top .navbar-brand.truncate {
     font-size: 1.5rem;
-    max-width: 60%; /* Tighter constraint for truncation */
+    max-width: 60%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
     padding: 0.5rem;
-    display: inline-block; /* Ensure proper truncation */
+    display: inline-block;
 }
 
 .navbar-top .nav-link {
@@ -29,21 +29,30 @@
     padding: 0.75rem;
 }
 
+.navbar-top .btn {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+}
+
 .modal-title {
     font-size: 1.25rem;
 }
 
 .modal-body p {
     font-size: 1.1rem;
-    word-break: break-word; /* Handle long words in modal */
+    word-break: break-word;
 }
 
 @media (max-width: 576px) {
     .navbar-top .navbar-brand.truncate {
         font-size: 1.25rem;
-        max-width: 50%; /* Adjust for smaller screens */
+        max-width: 50%;
     }
     .navbar-top .nav-link {
         font-size: 1.75rem;
+    }
+    .navbar-top .btn {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
     }
 }

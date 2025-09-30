@@ -2,44 +2,48 @@
  * The controller for the prefs component.
  */
 class PrefsController {
-  constructor(AppConfig) {
-    this.AppConfig = AppConfig
-  }
-
-  $onInit() {
-    this.prefs = {
-      restDelay: this.AppConfig.restDelay
+    constructor(AppConfig) {
+        this.AppConfig = AppConfig
+        this.dateModel =  new Date('2023-01-02');
     }
-  }
 
-  /** Clear out the session storage */
-  reset() {
-    sessionStorage.clear();
-    document.location.reload(true);
-  }
+    $onInit() {
+        this.prefs = {
+            restDelay: this.AppConfig.restDelay
+        }
+    }
 
-  /** After saving preferences to session storage, reload the entire application */
-  savePrefs() {
-    angular.extend(this.AppConfig, { restDelay: this.prefs.restDelay }).save();
-    document.location.reload(true);
-  }
+    /** Clear out the session storage */
+    reset() {
+        sessionStorage.clear();
+        document.location.reload(true);
+    }
+
+    /** After saving preferences to session storage, reload the entire application */
+    savePrefs() {
+        angular.extend(this.AppConfig, {restDelay: this.prefs.restDelay}).save();
+        document.location.reload(true);
+    }
 }
+
 PrefsController.$inject = ['AppConfig'];
 
 /**
  * A component which shows and updates app preferences
  */
 export const prefs = {
-  controller: PrefsController,
+    controller: PrefsController,
 
-  template: `
+    template: `
     <div>
       <button class="btn btn-primary" ng-click="$ctrl.reset()"><i class="fa fa-recycle"></i> <span>Reset All Data</span></button>
     </div>
     
     <div>
       <label for="restDelay">Simulated REST API delay (ms)</label>
+          <bs5-datepicker min-date="minDate" ng-model="$ctrl.dateModel"></bs5-datepicker>
       <input type="text" name="restDelay" ng-model="$ctrl.prefs.restDelay">
       <button class="btn btn-primary" ng-click="$ctrl.savePrefs()">Save</button>
     </div>
-`};
+`
+};

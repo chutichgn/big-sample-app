@@ -33,6 +33,11 @@
     margin-bottom: 0.25rem;
 }
 
+.navbar-bottom .dropdown {
+    flex: 1;
+    min-width: 60px;
+}
+
 .navbar-bottom .burger-icon {
     background: none;
     border: none;
@@ -42,8 +47,7 @@
     flex-direction: column;
     align-items: center;
     padding: 0.75rem;
-    flex: 1;
-    min-width: 60px;
+    width: 100%;
 }
 
 .navbar-bottom .burger-icon i {
@@ -51,52 +55,37 @@
     margin-bottom: 0.25rem;
 }
 
-.offcanvas-bottom {
-    height: 60vh;
-}
-
-.offcanvas-header .offcanvas-title {
-    font-size: 1.25rem;
-}
-
-.offcanvas-body .nav-link {
+.navbar-bottom .dropdown-menu {
     font-size: 1.1rem;
-    padding: 0.75rem;
+    min-width: 150px;
 }
 
-/* Dynamic hiding based on item count */
-.navbar-bottom .nav-items-container .nav-link:nth-child(n+9) {
-    display: none; /* Hide items beyond 8 by default */
+.navbar-bottom .dropdown-item {
+    padding: 0.5rem 1rem;
 }
 
-@media (min-width: 1200px) {
-    .navbar-bottom .burger-icon {
-        display: none; /* Hide burger when all items fit */
-    }
-    .navbar-bottom .nav-items-container .nav-link {
-        display: flex !important; /* Show all items */
+/* Responsive hiding of items */
+@media (max-width: 1200px) {
+    .navbar-bottom .nav-item-help,
+    .navbar-bottom .nav-item-favorites {
+        display: none; /* Hide Help, Favorites */
     }
 }
 
-@media (max-width: 1199.98px) {
-    .navbar-bottom .nav-items-container .nav-link:nth-child(n+7) {
-        display: none; /* Hide items beyond 6 */
+@media (max-width: 992px) {
+    .navbar-bottom .nav-item-orders,
+    .navbar-bottom .nav-item-settings {
+        display: none; /* Hide Orders, Settings */
     }
 }
 
-@media (max-width: 991.98px) {
-    .navbar-bottom .nav-items-container .nav-link:nth-child(n+5) {
-        display: none; /* Hide items beyond 4 */
+@media (max-width: 768px) {
+    .navbar-bottom .nav-item-cart {
+        display: none; /* Hide Cart */
     }
 }
 
-@media (max-width: 767.98px) {
-    .navbar-bottom .nav-items-container .nav-link:nth-child(n+4) {
-        display: none; /* Hide items beyond 3 */
-    }
-}
-
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
     .navbar-bottom .nav-link,
     .navbar-bottom .burger-icon {
         font-size: 0.9rem;
@@ -106,7 +95,7 @@
     .navbar-bottom .burger-icon i {
         font-size: 1.75rem;
     }
-    .offcanvas-body .nav-link {
+    .navbar-bottom .dropdown-menu {
         font-size: 1rem;
     }
 }

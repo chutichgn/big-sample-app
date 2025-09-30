@@ -1369,6 +1369,11 @@ angular-breadcrumb@^0.5.0:
   resolved "https://registry.npmjs.org/angular-breadcrumb/-/angular-breadcrumb-0.5.0.tgz"
   integrity sha512-7wHwhJu7tv87YeoU/kZFQp/fZeVqstdHpVG9QDq1fAynRsD9qybT4792gDNdGyOxM7ULcvL/rgGMj58Jj0eJeA==
 
+angular-jwt@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.npmjs.org/angular-jwt/-/angular-jwt-0.1.11.tgz"
+  integrity sha512-793dv5vXOXaW5/cweMd+sqSf9dPhbazDya3szTVOQ84MDEj1nYLJrixBBa7WNtZeMqz7ylWX7djnFgqLjEWcHw==
+
 angular@^1.8.2, angular@>=1.2.0:
   version "1.8.3"
   resolved "https://registry.npmjs.org/angular/-/angular-1.8.3.tgz"

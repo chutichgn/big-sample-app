@@ -1,0 +1,53 @@
+<!-- src/main/footer-nav/footer-nav.html -->
+<nav class="navbar fixed-bottom navbar-light bg-white navbar-bottom">
+    <div class="container-fluid justify-content-around nav-items-container">
+        <a class="nav-link nav-item-home" ui-sref="app.home" ui-sref-active="active">
+            <i class="bi bi-house-door"></i>
+            Home
+        </a>
+        <a class="nav-link nav-item-search" ui-sref="app.search" ui-sref-active="active">
+            <i class="bi bi-search"></i>
+            Search
+        </a>
+        <a class="nav-link nav-item-profile" ui-sref="app.profile" ui-sref-active="active">
+            <i class="bi bi-person"></i>
+            Profile
+        </a>
+        <a class="nav-link nav-item-cart" ui-sref="app.cart" ui-sref-active="active">
+            <i class="bi bi-cart"></i>
+            Cart
+        </a>
+        <a class="nav-link nav-item-settings" ui-sref="app.settings" ui-sref-active="active">
+            <i class="bi bi-gear"></i>
+            Settings
+        </a>
+        <a class="nav-link nav-item-orders" ui-sref="app.orders" ui-sref-active="active">
+            <i class="bi bi-box"></i>
+            Orders
+        </a>
+        <a class="nav-link nav-item-favorites" ui-sref="app.favorites" ui-sref-active="active">
+            <i class="bi bi-heart"></i>
+            Favorites
+        </a>
+        <a class="nav-link nav-item-help" ui-sref="app.help" ui-sref-active="active">
+            <i class="bi bi-question-circle"></i>
+            Help
+        </a>
+        <div class="dropdown">
+            <button class="burger-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-list"></i>
+                More
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" ui-sref="app.home" ui-sref-active="active">Home</a></li>
+                <li><a class="dropdown-item" ui-sref="app.search" ui-sref-active="active">Search</a></li>
+                <li><a class="dropdown-item" ui-sref="app.profile" ui-sref-active="active">Profile</a></li>
+                <li><a class="dropdown-item" ui-sref="app.cart" ui-sref-active="active">Cart</a></li>
+                <li><a class="dropdown-item" ui-sref="app.settings" ui-sref-active="active">Settings</a></li>
+                <li><a class="dropdown-item" ui-sref="app.orders" ui-sref-active="active">Orders</a></li>
+                <li><a class="dropdown-item" ui-sref="app.favorites" ui-sref-active="active">Favorites</a></li>
+                <li><a class="dropdown-item" ui-sref="app.help" ui-sref-active="active">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

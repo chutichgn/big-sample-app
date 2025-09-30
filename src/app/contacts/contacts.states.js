@@ -14,7 +14,7 @@ export const contactsState = {
         // Resolve all the contacts.  The resolved contacts are injected into the controller.
         contacts: ['Contacts', (Contacts) => Contacts.all()]
     },
-    data: {requiresAuth: true},
+    permissionCheck: {requiresAuth: true},
     deepStateRedirect: true,
     sticky: true,
     views: {

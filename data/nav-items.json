@@ -1,0 +1,50 @@
+[
+  {
+    "state": "home",
+    "label": "Home",
+    "icon": "bi-house-door",
+    "protected": false
+  },
+  {
+    "state": "mymessages",
+    "label": "Messages",
+    "icon": "bi bi-envelope",
+    "protected": false
+  },
+  {
+    "state": "contacts",
+    "label": "Contacts",
+    "icon": "bi-person",
+    "protected": true
+  },
+  {
+    "state": "prefs",
+    "label": "Prefs",
+    "icon": "bi-cart",
+    "protected": true
+  },
+  {
+    "state": "app.settings",
+    "label": "Settings",
+    "icon": "bi-gear",
+    "protected": true
+  },
+  {
+    "state": "app.orders",
+    "label": "Orders",
+    "icon": "bi-box",
+    "protected": true
+  },
+  {
+    "state": "app.favorites",
+    "label": "Favorites",
+    "icon": "bi-heart",
+    "protected": true
+  },
+  {
+    "state": "app.help",
+    "label": "Help",
+    "icon": "bi-question-circle",
+    "protected": true
+  }
+]

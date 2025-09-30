@@ -1,5 +1,6 @@
 import template from './topNav.cmp.html';
 import './topNav.cmp.css';
+import {AuthService} from "../global/auth.service";
 
 /**
  * The controller for the `login` component
@@ -8,11 +9,14 @@ import './topNav.cmp.css';
  * Then it sends the user back to the `returnTo` state, which is provided as a resolve data.
  */
 class TopNavController {
-    constructor($state, $scope, $rootScope,$transitions) {
-        // this.$rootScope = $rootScope;
+    constructor($state, $scope, $rootScope,$transitions,AuthService) {
         this.title =  $rootScope.pageTitle || ''; // Initial sync with $rootScope.pageTitle
         this.isModalOpen = false;
         this.$scope = $scope;
+        this.AuthService = AuthService;
+        this.$state = $state;
+        this.rootScope = $rootScope;
+
 
         // Listen for state change
         // Watch $rootScope.pageTitle for changes
@@ -22,6 +26,8 @@ class TopNavController {
         //         this.title = newValue || ''; // Sync appName with $rootScope.pageTitle
         //     }
         // );
+
+        $rootScope.$emit('loginModalEvt', { message: 'This is a global event!' });
 
         // Listen for setTitle event
         $rootScope.$on('setTitle', (event, newTitle) => {
@@ -43,13 +49,24 @@ class TopNavController {
 
     }
 
+    openSignInModal() {
+        console.log(5555555)
+        this.rootScope.$emit('loginModalEvt', { userId: 42 });
+    }
+
+    logout() {
+        this.AuthService.logout();
+        this.$state.go('app.home');
+    }
+
+
     toggleModal() {
         this.isModalOpen = !this.isModalOpen;
         this.$scope.$apply();
     }
 }
 
-TopNavController.$inject = ['$state', '$scope', '$rootScope','$transitions'];
+TopNavController.$inject = ['$state', '$scope', '$rootScope','$transitions','AuthService'];
 /**
  * This component renders a faux authentication UI
  *

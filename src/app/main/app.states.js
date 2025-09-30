@@ -1,7 +1,7 @@
 import {appTemplate, appController} from "./app.component";
 import {welcomeTemplate, welcomeController} from "./welcome.component";
 import {homeTemplate} from "./home.component";
-import {loginTemplate, loginController} from "./login.component";
+import {loginTemplate, loginController} from "./login.cmp";
 
 
 /**

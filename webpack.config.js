@@ -45,7 +45,13 @@ module.exports = {
             directory: path.join(__dirname, "dist")
         },
         historyApiFallback: true, // For AngularJS client-side routing
-        port: 8081
+        port: 8081,
+
+        proxy: {
+            '/login': 'http://localhost:3000',
+            '/check-token': 'http://localhost:3000',
+            '/logout': 'http://localhost:3000'
+        }
     },
 
     performance: {

@@ -1,0 +1,60 @@
+import template from './login.form.html';
+
+/**
+ * The controller for the `login` component
+ *
+ * The `login` method validates the credentials.
+ * Then it sends the user back to the `returnTo` state, which is provided as a resolve data.
+ */
+class LoginFormCtrl {
+    constructor(AppConfig, AuthService, $state, $rootScope) {
+        let ctrl = this;
+        this.usernames = AuthService.usernames;
+
+        this.credentials = {
+            username: AppConfig.emailAddress,
+            password: 'password'
+        };
+
+        this.login = (credentials) => {
+            this.authenticating = true;
+
+            const returnToOriginalState = () => {
+                let state = this.returnTo.state();
+                let params = this.returnTo.params();
+                let options = Object.assign({}, this.returnTo.options(), {reload: true});
+                $state.go(state, params, options);
+            };
+
+            const showError = (errorMessage) =>
+                this.errorMessage = errorMessage;
+
+            AuthService.authenticate(credentials.username, credentials.password)
+                .then(ctrl.onSuccess)
+                .catch(showError)
+                .finally(() => {
+                    this.authenticating = false;
+                });
+        }
+    }
+}
+
+LoginFormCtrl.$inject = ['AppConfig', 'AuthService', '$state', '$rootScope'];
+
+/**
+ * This component renders a faux authentication UI
+ *
+ * It prompts for the username/password (and gives hints with bouncy arrows)
+ * It shows errors if the authentication failed for any reason.
+ */
+export const loginForm = {
+    bindings: {
+        returnTo: '<',
+        onSuccess: '&?',   // optional callback
+        onCancel: '&?'     // optional callback
+    },
+
+    controller: LoginFormCtrl,
+
+    template: template
+};

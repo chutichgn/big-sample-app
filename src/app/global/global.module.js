@@ -6,6 +6,7 @@ import {DialogService} from "./dialog.service";
 import {LoadingIndicatorService} from "./loadingIndicator.service";
 import {authHookRunBlock} from "./requiresAuth.hook";
 import {loadingIndicatorHookRunBlock} from "./loadingIndicator.hook";
+import {NavService} from "./nav.service";
 
 export const GLOBAL_MODULE = angular.module('global', []);
 GLOBAL_MODULE.constant('dialog', dialog);
@@ -18,6 +19,7 @@ GLOBAL_MODULE.service('Folders', Folders);
 GLOBAL_MODULE.service('Messages', Messages);
 GLOBAL_MODULE.service('DialogService', DialogService);
 GLOBAL_MODULE.service('LoadingIndicatorService', LoadingIndicatorService);
+GLOBAL_MODULE.service('NavService', NavService);
 
 GLOBAL_MODULE.run(authHookRunBlock);
 GLOBAL_MODULE.run(loadingIndicatorHookRunBlock);

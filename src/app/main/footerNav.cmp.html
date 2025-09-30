@@ -1,25 +1,16 @@
 <!-- src/main/footer-nav/footer-nav.html -->
 <nav class="navbar fixed-bottom navbar-light bg-white navbar-bottom">
     <div class="container-fluid justify-content-around">
-        <a class="nav-link" ui-sref="home" ui-sref-active="active">
-            <i class="bi bi-house-door"></i>
-            Home
-        </a>
-        <a class="nav-link" ui-sref="mymessages" ui-sref-active="active">
-            <i class="bi bi-envelope"></i>
-            Messages
-        </a>
-        <a class="nav-link" ui-sref="contacts" ui-sref-active="active">
-            <i class="bi bi-person"></i>
-            Contacts
+
+        <a class="nav-link" ng-repeat="item in $ctrl.navItems" ng-class="'nav-item-' + item.state.replace('app.', '')"
+           ui-sref="{{item.state}}" ui-sref-active="active"  >
+            <i class="bi" ng-class="item.icon"></i>
+            <span ng-bind="item.label"></span>
         </a>
 
-        <a class="nav-link" ui-sref="prefs" ui-sref-active="active">
-            <i class="bi bi-gear"></i>
-            Prefs
-        </a>
+
         <button class="burger-icon" ng-click="$ctrl.toggleOffcanvas()">
-            <i class="bi bi-list"></i>
+            <i class="bi bi-three-dots"></i>
             More
         </button>
         <div class="offcanvas offcanvas-bottom" tabindex="-1" ng-class="{ 'show': $ctrl.isOffcanvasOpen }">
@@ -29,24 +20,10 @@
             </div>
             <div class="offcanvas-body">
                 <div class="d-flex flex-column gap-3">
-
-                    <a class="nav-link" ui-sref="app.settings" ui-sref-active="active"
-                       ng-click="$ctrl.toggleOffcanvas()">
-                        <i class="bi bi-gear"></i>
-                        Settings
-                    </a>
-                    <a class="nav-link" ui-sref="app.orders" ui-sref-active="active" ng-click="$ctrl.toggleOffcanvas()">
-                        <i class="bi bi-box"></i>
-                        Orders
-                    </a>
-                    <a class="nav-link" ui-sref="app.favorites" ui-sref-active="active"
-                       ng-click="$ctrl.toggleOffcanvas()">
-                        <i class="bi bi-heart"></i>
-                        Favorites
-                    </a>
-                    <a class="nav-link" ui-sref="app.help" ui-sref-active="active" ng-click="$ctrl.toggleOffcanvas()">
-                        <i class="bi bi-question-circle"></i>
-                        Help
+                    <a class="nav-link" ng-repeat="item in $ctrl.navItems" ui-sref="{{item.state}}"
+                       ui-sref-active="active" ng-click="$ctrl.toggleOffcanvas()">
+                        <i class="bi" ng-class="item.icon"></i>
+                        <span ng-bind="item.label"></span>
                     </a>
                 </div>
             </div>
