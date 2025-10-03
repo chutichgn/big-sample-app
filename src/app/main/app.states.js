@@ -77,6 +77,18 @@ export const loginState = {
     resolve: {returnTo: returnTo}
 };
 
+
+/**
+ * logout state.  It is state so that it can be invoked easily anywhere ( no onclick or event trigger needed). User can
+ * even bookmark it on browser for quick logout
+ * It's a modal so it dont disrupt other screen
+ */
+export const stSignout  = {
+    name: 'signout',
+    url: '/sign-out',
+    component: 'signout',
+};
+
 /**
  * A resolve function for 'login' state which figures out what state to return to, after a successful login.
  *
@@ -139,3 +151,30 @@ export const mymessagesFutureState = {
     }
 };
 
+// Future State (Placeholder) for the users module
+export const usersFutureState = {
+    parent: 'generic',
+    name: 'users.**',
+    url: '/users',
+    onEnter: ['$stateParams', '$state',
+        function($stateParams, $state) {
+            //just to debug if needed
+            console.log('!!usersFutureState Init state ')
+
+        }]
+    // lazyLoad: function (transition) {
+    //     const $ocLazyLoad = transition.injector().get('$ocLazyLoad');
+    //     return import('../user/users.module').then(mod => $ocLazyLoad.load(mod.USERS_MODULE))
+    // }
+};
+
+// Future State (Placeholder) for the users module
+export const newsFutureState = {
+    parent: 'generic',
+    name: 'news.**',
+    url: '/news',
+    lazyLoad: function (transition) {
+        const $ocLazyLoad = transition.injector().get('$ocLazyLoad');
+        return import('../news/NEWS_MODULE').then(mod => $ocLazyLoad.load(mod.NEWS_MODULE))
+    }
+};

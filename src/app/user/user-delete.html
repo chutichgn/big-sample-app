@@ -1,0 +1,43 @@
+<div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title text-danger">Delete User</h5>
+    <button type="button" class="btn-close" ng-click="$ctrl.close()"></button>
+</div>
+<div class="offcanvas-body">
+    <div ng-if="$ctrl.user" class="user-delete-content">
+        <div class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <strong>Warning!</strong> This action cannot be undone.
+        </div>
+
+        <div class="text-center mb-4">
+            <img ng-src="{{$ctrl.user.avatar}}" alt="{{$ctrl.user.name}}" class="user-delete-avatar">
+        </div>
+
+        <div class="user-info-box">
+            <p class="mb-3">You are about to delete the following user:</p>
+            <div class="user-info">
+                <div class="info-item">
+                    <label>Name:</label>
+                    <span>{{$ctrl.user.name}}</span>
+                </div>
+                <div class="info-item">
+                    <label>Email:</label>
+                    <span>{{$ctrl.user.email}}</span>
+                </div>
+                <div class="info-item">
+                    <label>Role:</label>
+                    <span class="badge bg-secondary">{{$ctrl.user.role}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2 mt-4">
+            <button type="button" class="btn btn-secondary" ng-click="$ctrl.close()">
+                Cancel
+            </button>
+            <button type="button" class="btn btn-danger" ng-click="$ctrl.confirmDelete()">
+                <i class="bi bi-trash"></i> Delete User
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="modal-header">
+    <h5 class="modal-title">Goodbye!</h5>
+    <button type="button" class="btn-close" ng-click="dismiss('close-button-click')"></button>
+</div>
+<div class="modal-body text-center">
+    <p>Goodbye, <strong>{{$ctrl.user? user : 'Guest'}}</strong>!</p>
+    <p>Undo sign out , click-here</p>
+    <p>You will be redirected in {{$ctrl.countdown}} seconds...</p>
+</div>

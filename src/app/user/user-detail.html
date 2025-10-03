@@ -1,0 +1,32 @@
+<div class="offcanvas-header">
+    <h5 class="offcanvas-title">User Details</h5>
+    <button type="button" class="btn-close" ng-click="$ctrl.close()"></button>
+</div>
+<div class="offcanvas-body">
+    <div ng-if="$ctrl.user" class="user-detail-content">
+        <div class="text-center mb-4">
+            <img ng-src="{{$ctrl.user.avatar}}" alt="{{$ctrl.user.name}}" class="user-detail-avatar">
+        </div>
+        <div class="user-info">
+            <div class="info-item">
+                <label>Name:</label>
+                <span>{{$ctrl.user.name}}</span>
+            </div>
+            <div class="info-item">
+                <label>Email:</label>
+                <span>{{$ctrl.user.email}}</span>
+            </div>
+            <div class="info-item">
+                <label>Role:</label>
+                <span class="badge bg-secondary">{{$ctrl.user.role}}</span>
+            </div>
+            <div class="info-item">
+                <label>User ID:</label>
+                <span>#{{$ctrl.user.id}}</span>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!$ctrl.user" class="text-center text-muted">
+        <p>User not found</p>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="user-list-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Users Management</h2>
+        <button class="btn btn-primary" ng-click="$ctrl.openEditOffcanvas()">
+            <i class="bi bi-plus-lg"></i> Add User
+        </button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Avatar</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in $ctrl.users">
+                <td>
+                    <img ng-src="{{user.avatar}}" alt="{{user.name}}" class="user-avatar">
+                </td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td><span class="badge bg-secondary">{{user.role}}</span></td>
+                <td>
+                    <!-- VIEW ACTIONS -->
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-sm btn-outline-info"
+                                ng-click="$ctrl.openDetailOffcanvas(user.id)"
+                                title="Quick view without navigation">
+                            <i class="bi bi-eye"></i> Quick View
+                        </button>
+                        <button class="btn btn-sm btn-outline-info"
+                                ui-sref="users.detail({id: user.id})"
+                                title="View with navigation">
+                            <i class="bi bi-box-arrow-up-right"></i> View
+                        </button>
+                    </div>
+
+                    <!-- EDIT ACTION -->
+                    <button class="btn btn-sm btn-outline-primary ms-2"
+                            ng-click="$ctrl.openEditOffcanvas(user.id)">
+                        <i class="bi bi-pencil"></i> Edit
+                    </button>
+
+                    <!-- DELETE ACTIONS -->
+                    <div class="btn-group ms-2" role="group">
+                        <button class="btn btn-sm btn-outline-danger"
+                                ng-click="$ctrl.openDeleteOffcanvas(user.id)"
+                                title="Quick delete without navigation">
+                            <i class="bi bi-trash"></i> Quick Delete
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger"
+                                ui-sref="users.delete({id: user.id})"
+                                title="Delete with navigation">
+                            <i class="bi bi-box-arrow-up-right"></i> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <offcanvas offcanvas-id="editUserOffcanvas" placement="end">
+        <user-edit user-id="$ctrl.editUserId" on-save="$ctrl.handleUserSaved()"></user-edit>
+    </offcanvas>
+    <!-- At bottom of template -->
+    <offcanvas offcanvas-id="userDetailOffcanvas" placement="end">
+        <user-detail user-id="$ctrl.selectedUserId"></user-detail>
+    </offcanvas>
+
+    <offcanvas offcanvas-id="deleteUserOffcanvas" placement="end">
+        <user-delete user-id="$ctrl.selectedUserId" on-delete="$ctrl.handleUserDeleted()"></user-delete>
+    </offcanvas>
+</div>

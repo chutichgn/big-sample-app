@@ -16,7 +16,7 @@ export const mymessagesState = {
         mymessages: 'mymessages'
     },
     // Mark this state as requiring authentication.  See ../routerhooks/requiresAuth.js.
-    data: {requiresAuth: true},
+    permissionCheck: {requiresAuth: true},
     // If mymessages state is directly activated, redirect the transition to the most recent
     // child state that was previously activated, or 'mymessages.messagelist' (by default)
     deepStateRedirect: {

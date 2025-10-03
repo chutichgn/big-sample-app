@@ -1,0 +1,23 @@
+<div class="comment-list">
+    <div class="comment-item" ng-repeat="comment in $ctrl.comments">
+        <div class="comment-avatar-wrapper">
+            <img
+                    ng-src="{{$ctrl.getAuthor(comment.userId).avatar}}"
+                    alt="{{$ctrl.getAuthor(comment.userId).name}}"
+                    class="comment-avatar"
+                    ng-click="$ctrl.handleAvatarClick(comment.userId)"
+                    title="Click to view user details">
+        </div>
+        <div class="comment-content">
+            <div class="comment-header">
+                <span class="comment-author">{{$ctrl.getAuthor(comment.userId).name}}</span>
+                <span class="comment-date">{{comment.date}}</span>
+            </div>
+            <p class="comment-text">{{comment.text}}</p>
+        </div>
+    </div>
+
+    <div ng-if="$ctrl.comments.length === 0" class="no-comments">
+        <p class="text-muted">No comments yet. Be the first to comment!</p>
+    </div>
+</div>

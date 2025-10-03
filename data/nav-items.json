@@ -30,15 +30,15 @@
     "protected": true
   },
   {
-    "state": "app.orders",
-    "label": "Orders",
+    "state": "users.list",
+    "label": "Users",
     "icon": "bi-box",
     "protected": true
   },
   {
-    "state": "app.favorites",
-    "label": "Favorites",
-    "icon": "bi-heart",
+    "state": "news.list",
+    "label": "News",
+    "icon": "bi-newspaper",
     "protected": true
   },
   {

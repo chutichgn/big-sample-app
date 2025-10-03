@@ -14,7 +14,7 @@ export function authHookRunBlock($transitions, AuthService) {
     let requiresAuthCriteria = {
         to: (state) => {
             console.debug("!! checking authentication for state ", state.name);
-            return state.permissionCheck && state.data.requiresAuth;
+            return state.permissionCheck ;
         }
     };
 

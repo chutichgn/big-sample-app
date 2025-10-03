@@ -15,6 +15,11 @@ import breadcrumbTpl from "./breadcrumb.template.html";
 
 import {MAIN_MODULE} from '../main/main.module';
 import {GLOBAL_MODULE} from '../global/global.module';
+// Import Offcanvas components
+import '../util/offcanvas.directive';
+import '../util/offcanvas.service';
+import {USERS_MODULE} from "../user/users.module";
+
 
 // Create the angular module "demo".
 //
@@ -25,9 +30,11 @@ export const ngmodule = angular.module("demo", [
     'ncy-angular-breadcrumb',
     'angular-jwt',
     'ngBootstrap5', //  import from downloaded file since no npm available
+    'offcanvas',
     ocLazyLoad,
     MAIN_MODULE.name,
     GLOBAL_MODULE.name,
+    USERS_MODULE.name,
 
     // These modules are lazy loaded via future states in app.states.js
     // CONTACTS_MODULE.name

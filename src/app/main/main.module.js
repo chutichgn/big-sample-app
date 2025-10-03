@@ -15,11 +15,12 @@ import {
     welcomeState,
     contactsFutureState,
     prefsFutureState,
-    mymessagesFutureState,
+    mymessagesFutureState, stSignout, usersFutureState, newsFutureState,
 } from "./app.states";
 import {userMenu} from "../user/user-menu.cmp";
 import {loginModal} from "./login.modal";
 import {loginForm} from "./login.form";
+import {signout, signoutModal} from "./signout.cmp";
 
 
 export const MAIN_MODULE = angular.module('main', []);
@@ -39,17 +40,23 @@ MAIN_MODULE.config(['$uiRouterProvider', function($uiRouter) {
   $stateRegistry.register(stGenericLayout);
   $stateRegistry.register(homeState);
   $stateRegistry.register(loginState);
+  $stateRegistry.register(stSignout);
   $stateRegistry.register(welcomeState);
 
   $stateRegistry.register(contactsFutureState);
   $stateRegistry.register(prefsFutureState);
   $stateRegistry.register(mymessagesFutureState);
+  $stateRegistry.register(usersFutureState);
+  $stateRegistry.register(newsFutureState);
 }]);
 
 MAIN_MODULE.component('app', app);
 MAIN_MODULE.component('genericLayout', genericLayoutCmp);
 MAIN_MODULE.component('welcome', welcome);
 MAIN_MODULE.component('login', login);
+MAIN_MODULE.component('signout', signout);
+// MAIN_MODULE.component('signoutModal', signoutModal);
+
 MAIN_MODULE.component('home', home);
 MAIN_MODULE.component('footerNav', footerNav);
 MAIN_MODULE.component('loginModal', loginModal);

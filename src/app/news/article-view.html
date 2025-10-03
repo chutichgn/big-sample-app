@@ -1,0 +1,41 @@
+<div class="article-view-container">
+    <div ng-if="$ctrl.article">
+        <div class="mb-4">
+            <a ui-sref="news.list" class="btn btn-outline-secondary btn-sm">
+                ← Back to Articles
+            </a>
+        </div>
+
+        <article class="article-content">
+            <img ng-src="{{$ctrl.article.image}}" class="article-image" alt="{{$ctrl.article.title}}">
+
+            <h1 class="article-title">{{$ctrl.article.title}}</h1>
+
+            <div class="article-meta">
+                <span class="author">By {{$ctrl.article.author}}</span>
+                <span class="date">{{$ctrl.article.date}}</span>
+            </div>
+
+            <div class="article-body">
+                <p>{{$ctrl.article.content}}</p>
+            </div>
+        </article>
+
+        <div class="comments-section mt-5">
+            <h3 class="mb-4">Comments</h3>
+            <comment-list
+                    article-id="$ctrl.article.id"
+                    on-user-click="$ctrl.showUserDetail(userId)">
+            </comment-list>
+        </div>
+    </div>
+
+    <div ng-if="!$ctrl.article" class="alert alert-warning">
+        Article not found
+    </div>
+
+    <!-- User Detail Offcanvas -->
+    <offcanvas offcanvas-id="userDetailOffcanvas" placement="end">
+        <user-detail user-id="$ctrl.selectedUserId"></user-detail>
+    </offcanvas>
+</div>

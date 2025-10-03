@@ -1,0 +1,30 @@
+<div class="offcanvas-header">
+    <h5 class="offcanvas-title">{{$ctrl.isEditMode ? 'Edit User' : 'Add User'}}</h5>
+    <button type="button" class="btn-close" ng-click="$ctrl.cancel()"></button>
+</div>
+<div class="offcanvas-body">
+    <form name="userForm" ng-submit="$ctrl.save()" novalidate>
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" ng-model="$ctrl.user.name" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" ng-model="$ctrl.user.email" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Role</label>
+            <select class="form-select" ng-model="$ctrl.user.role">
+                <option value="Admin">Admin</option>
+                <option value="Editor">Editor</option>
+                <option value="User">User</option>
+            </select>
+        </div>
+        <div class="d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-secondary" ng-click="$ctrl.cancel()">Cancel</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">
+                {{$ctrl.isEditMode ? 'Update' : 'Create'}}
+            </button>
+        </div>
+    </form>
+</div>

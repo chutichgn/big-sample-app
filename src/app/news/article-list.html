@@ -1,0 +1,19 @@
+<div class="article-list-container">
+    <h2 class="mb-4">News Articles</h2>
+
+    <div class="row">
+        <div class="col-md-6 mb-4" ng-repeat="article in $ctrl.articles">
+            <div class="card article-card">
+                <img ng-src="{{article.image}}" class="card-img-top" alt="{{article.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{article.title}}</h5>
+                    <p class="card-text">{{article.content | limitTo:150}}...</p>
+                    <div class="article-meta">
+                        <small class="text-muted">By {{article.author}} • {{article.date}}</small>
+                    </div>
+                    <a ui-sref="news.view({id: article.id})" class="btn btn-primary mt-3">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

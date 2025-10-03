@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "email": "alice@example.com",
+    "role": "User",
+    "bio": "Loves cats and coffee",
+    "avatar": "https://i.pravatar.cc/150?img=1",
+    "password": "password"
+  },
+  {
+    "id": 2,
+    "name": "Bob",
+    "email": "bob@example.com",
+    "role": "User",
+    "bio": "JavaScript enthusiast",
+    "avatar": "https://i.pravatar.cc/150?img=2",
+    "password": "password"
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "email": "charlie@example.com",
+    "role": "Editor",
+    "bio": "AngularJS old-timer",
+    "avatar": "https://i.pravatar.cc/150?img=3",
+    "password": "password"
+  },
+  {
+    "id": 4,
+    "name": "Myself Angular",
+    "email": "myself@angular.dev",
+    "role": "User",
+    "bio": "AngularJS user 1",
+    "avatar": "https://i.pravatar.cc/150?img=4",
+    "password": "password"
+  },
+  {
+    "id": 5,
+    "name": "Dev Gal",
+    "email": "devgal@angular.dev",
+    "role": "User",
+    "bio": "AngularJS user 2 3",
+    "avatar": "https://i.pravatar.cc/150?img=5",
+    "password": "password"
+  },
+  {
+    "id": 6,
+    "name": "Dev Guy",
+    "email": "devguy@angular.dev",
+    "role": "User",
+    "bio": "AngularJS enthusiast",
+    "avatar": "https://i.pravatar.cc/150?img=6",
+    "password": "password"
+  },
+  {
+    "id": 7,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "role": "Admin",
+    "bio": "System administrator",
+    "avatar": "https://i.pravatar.cc/150?img=7",
+    "password": "password"
+  },
+  {
+    "id": 8,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "role": "Editor",
+    "bio": "Content editor",
+    "avatar": "https://i.pravatar.cc/150?img=8",
+    "password": "password"
+  },
+  {
+    "id": 9,
+    "name": "Bob Johnson",
+    "email": "bob@example.com",
+    "role": "User",
+    "bio": "Regular user",
+    "avatar": "https://i.pravatar.cc/150?img=9",
+    "password": "password"
+  },
+  {
+    "id": 10,
+    "name": "Alice Williams",
+    "email": "alice@example.com",
+    "role": "User",
+    "bio": "UI designer",
+    "avatar": "https://i.pravatar.cc/150?img=10",
+    "password": "password"
+  },
+  {
+    "id": 11,
+    "name": "Charlie Brown",
+    "email": "charlie@example.com",
+    "role": "Editor",
+    "bio": "Technical writer",
+    "avatar": "https://i.pravatar.cc/150?img=11",
+    "password": "password"
+  }
+]
